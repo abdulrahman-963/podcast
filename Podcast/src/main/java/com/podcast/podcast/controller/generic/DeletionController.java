@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 @SuppressWarnings({"rawtypes"})
 public interface DeletionController {
 
-    DeletionService getService();
+    abstract DeletionService getService();
 
     @Operation(summary = "Delete entity details", description = "This API is used to delete existing entity")
     @ApiResponses(value = {@ApiResponse(responseCode = "204", description = "Deleted")})

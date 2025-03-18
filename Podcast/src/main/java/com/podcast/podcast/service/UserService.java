@@ -5,7 +5,8 @@ import com.podcast.podcast.model.entity.UserEntity;
 import com.podcast.podcast.model.search_criteria.UserSearchCriteria;
 import com.podcast.podcast.repository.BaseRepository;
 import com.podcast.podcast.repository.UserRepository;
-import com.podcast.podcast.service.generic.*;
+import com.podcast.podcast.service.generic.CrudService;
+import com.podcast.podcast.service.generic.DeletionBackupService;
 import com.podcast.podcast.service.mapper.GenericMapper;
 import com.podcast.podcast.service.mapper.UserMapper;
 import com.podcast.podcast.specification.DynamicSpecification;
@@ -20,10 +21,7 @@ import java.util.Objects;
 @Service
 @RequiredArgsConstructor
 @Slf4j
-public class UserService
-        implements CreattionService<UserEntity, UserDTO>,
-        ReadOnlyService<UserEntity, UserDTO, UserSearchCriteria>,
-        ModificationService<UserEntity, UserDTO>, DeletionService<UserEntity, UserDTO> {
+public class UserService implements CrudService<UserEntity, UserDTO, UserSearchCriteria> {
 
     private final UserRepository userRepository;
     private final UserMapper userMapper;

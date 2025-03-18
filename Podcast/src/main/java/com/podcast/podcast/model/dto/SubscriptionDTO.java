@@ -17,5 +17,4 @@ public class SubscriptionDTO extends BaseDTO {
     @NotBlank
     private String subscriptionType;
     private Long userId; // Reference to the user
-    private Long showId; // Reference to the show
 }

@@ -177,6 +177,18 @@ public class GlobalExceptionHandler extends ResponseEntityExceptionHandler {
                 .body(response);
     }
 
+    @ExceptionHandler(AttachmentException.class)
+    public ResponseEntity<ErrorResponse> handleAttachmentException(AttachmentException ex, WebRequest request) {
+        log.error("Attachment operation failed", ex);
+
+        ErrorResponse response = buildErrorResponse(HttpStatus.BAD_REQUEST,
+                ErrorCode.ATTACHMENT_UPLOAD_ERROR, request)
+                .message(resolveLocalizedMessage("Attachment operation failed", request))
+                .build();
+        return ResponseEntity.badRequest().body(response);
+    }
+
+
     // Unified error response builder
     private ErrorResponse.ErrorResponseBuilder buildErrorResponse(
             HttpStatus status, ErrorCode errorCode, WebRequest request) {

@@ -5,7 +5,8 @@ import com.podcast.podcast.model.entity.FileEntity;
 import com.podcast.podcast.model.search_criteria.FileSearchCriteria;
 import com.podcast.podcast.repository.BaseRepository;
 import com.podcast.podcast.repository.FileRepository;
-import com.podcast.podcast.service.generic.*;
+import com.podcast.podcast.service.generic.CrudService;
+import com.podcast.podcast.service.generic.DeletionBackupService;
 import com.podcast.podcast.service.mapper.FileMapper;
 import com.podcast.podcast.service.mapper.GenericMapper;
 import com.podcast.podcast.specification.DynamicSpecification;
@@ -20,10 +21,7 @@ import java.util.Objects;
 @Service
 @RequiredArgsConstructor
 @Slf4j
-public class FileService
-        implements CreattionService<FileEntity, FileDTO>,
-        ReadOnlyService<FileEntity, FileDTO, FileSearchCriteria>,
-        ModificationService<FileEntity, FileDTO>, DeletionService<FileEntity, FileDTO> {
+public class FileService implements CrudService<FileEntity, FileDTO, FileSearchCriteria> {
 
     private final FileRepository fileRepository;
     private final FileMapper fileMapper;

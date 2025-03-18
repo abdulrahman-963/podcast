@@ -27,7 +27,4 @@ public class ChannelEntity extends BaseEntity {
 
     private String coverImageUrl;
 
-    @ManyToOne
-    @JoinColumn(name = "user_id", nullable = false)
-    private UserEntity user;
 }

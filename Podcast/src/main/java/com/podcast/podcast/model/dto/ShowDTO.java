@@ -13,4 +13,6 @@ public class ShowDTO extends BaseDTO {
     private String coverImageUrl;
     private Long categoryId; // Reference to the category
     private Long channelId;  // Reference to the channel
+    private String categoryName; // Reference to the category
+    private String channelName;  // Reference to the channel
 }

@@ -5,7 +5,8 @@ import com.podcast.podcast.model.entity.ChannelEntity;
 import com.podcast.podcast.model.search_criteria.ChannelSearchCriteria;
 import com.podcast.podcast.repository.BaseRepository;
 import com.podcast.podcast.repository.ChannelRepository;
-import com.podcast.podcast.service.generic.*;
+import com.podcast.podcast.service.generic.CrudService;
+import com.podcast.podcast.service.generic.DeletionBackupService;
 import com.podcast.podcast.service.mapper.ChannelMapper;
 import com.podcast.podcast.service.mapper.GenericMapper;
 import com.podcast.podcast.specification.DynamicSpecification;
@@ -20,10 +21,7 @@ import java.util.Objects;
 @Service
 @RequiredArgsConstructor
 @Slf4j
-public class ChannelService
-        implements CreattionService<ChannelEntity, ChannelDTO>,
-        ReadOnlyService<ChannelEntity, ChannelDTO, ChannelSearchCriteria>,
-        ModificationService<ChannelEntity, ChannelDTO>, DeletionService<ChannelEntity, ChannelDTO> {
+public class ChannelService implements CrudService<ChannelEntity, ChannelDTO, ChannelSearchCriteria> {
 
     private final ChannelRepository channelRepository;
     private final ChannelMapper channelMapper;

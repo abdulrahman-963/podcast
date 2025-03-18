@@ -31,8 +31,6 @@ public class FileEntity extends BaseEntity {
 
     private Integer durationInSeconds;
 
-    @ManyToOne
-    @JoinColumn(name = "episode_id")
-    private EpisodeEntity episode;
+
 }
 

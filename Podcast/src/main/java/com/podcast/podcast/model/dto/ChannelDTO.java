@@ -11,5 +11,4 @@ public class ChannelDTO extends BaseDTO {
     private String name;
     private String description;
     private String coverImageUrl;
-    private Long userId; // Reference to the user who owns the channel
 }

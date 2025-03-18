@@ -5,7 +5,8 @@ import com.podcast.podcast.model.entity.CategoryEntity;
 import com.podcast.podcast.model.search_criteria.CategorySearchCriteria;
 import com.podcast.podcast.repository.BaseRepository;
 import com.podcast.podcast.repository.CategoryRepository;
-import com.podcast.podcast.service.generic.*;
+import com.podcast.podcast.service.generic.CrudService;
+import com.podcast.podcast.service.generic.DeletionBackupService;
 import com.podcast.podcast.service.mapper.CategoryMapper;
 import com.podcast.podcast.service.mapper.GenericMapper;
 import com.podcast.podcast.specification.DynamicSpecification;
@@ -20,10 +21,7 @@ import java.util.Objects;
 @Service
 @RequiredArgsConstructor
 @Slf4j
-public class CategoryService
-        implements CreattionService<CategoryEntity, CategoryDTO>,
-        ReadOnlyService<CategoryEntity, CategoryDTO, CategorySearchCriteria>,
-        ModificationService<CategoryEntity, CategoryDTO>, DeletionService<CategoryEntity, CategoryDTO> {
+public class CategoryService implements CrudService<CategoryEntity, CategoryDTO, CategorySearchCriteria> {
 
     private final CategoryRepository categoryRepository;
     private final CategoryMapper categoryMapper;

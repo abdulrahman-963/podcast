@@ -15,8 +15,8 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping(Constants.API_URI_V1 + "/categories")
 @RequiredArgsConstructor
-public class CategoryController implements CreationController<CategoryDTO>, ReadOnlyController<CategoryDTO, CategorySearchCriteria>,
-        DeletionController, ModificationController<CategoryDTO> {
+public class CategoryController implements CreationController<CategoryDTO>,
+        DeletionController, ModificationController<CategoryDTO>, ReadOnlyController<CategoryDTO, CategorySearchCriteria> {
 
     private final CategoryService categoryService;
 

@@ -12,7 +12,7 @@ public interface CreattionService<E, D> {
     abstract GenericMapper<E, D> getMapper();
 
     @Transactional
-    default D create(D entity) {
-        return getMapper().toDto(getRepository().save(getMapper().toEntity(entity)));
+    default D create(D dto) {
+        return getMapper().toDto(getRepository().save(getMapper().toEntity(dto)));
     }
 }

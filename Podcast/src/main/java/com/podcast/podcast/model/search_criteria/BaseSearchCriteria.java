@@ -6,7 +6,5 @@ import lombok.Setter;
 @Getter
 @Setter
 public class BaseSearchCriteria {
-
-    private long pageIndex;
-    private long pageSize;
+    
 }

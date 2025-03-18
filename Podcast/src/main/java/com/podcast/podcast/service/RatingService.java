@@ -5,7 +5,8 @@ import com.podcast.podcast.model.entity.RatingEntity;
 import com.podcast.podcast.model.search_criteria.RatingSearchCriteria;
 import com.podcast.podcast.repository.BaseRepository;
 import com.podcast.podcast.repository.RatingRepository;
-import com.podcast.podcast.service.generic.*;
+import com.podcast.podcast.service.generic.CrudService;
+import com.podcast.podcast.service.generic.DeletionBackupService;
 import com.podcast.podcast.service.mapper.GenericMapper;
 import com.podcast.podcast.service.mapper.RatingMapper;
 import com.podcast.podcast.specification.DynamicSpecification;
@@ -20,10 +21,7 @@ import java.util.Objects;
 @Service
 @RequiredArgsConstructor
 @Slf4j
-public class RatingService
-        implements CreattionService<RatingEntity, RatingDTO>,
-        ReadOnlyService<RatingEntity, RatingDTO, RatingSearchCriteria>,
-        ModificationService<RatingEntity, RatingDTO>, DeletionService<RatingEntity, RatingDTO> {
+public class RatingService implements CrudService<RatingEntity, RatingDTO, RatingSearchCriteria> {
 
     private final RatingRepository ratingRepository;
     private final RatingMapper ratingMapper;

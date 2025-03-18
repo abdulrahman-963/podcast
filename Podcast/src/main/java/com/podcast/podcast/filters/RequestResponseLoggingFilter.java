@@ -22,13 +22,14 @@ import java.util.Set;
 public class RequestResponseLoggingFilter extends OncePerRequestFilter {
 
     private static final Set<String> EXCLUDED_PATHS = Set.of(
-            "/swagger-ui", "/v3/api-docs", "/actuator"
+            "/swagger-ui", "/v3/api-docs", "/actuator", "/api/v1/attachments/download"
     );
 
     @Override
     protected boolean shouldNotFilter(HttpServletRequest request) {
         return EXCLUDED_PATHS.stream().anyMatch(request.getRequestURI()::startsWith);
     }
+
 
     @Override
     protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain)

@@ -17,7 +17,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 @SuppressWarnings({"unchecked", "rawtypes"})
 public interface CreationController<D extends BaseDTO> {
 
-    CreattionService getService();
+    abstract CreattionService getService();
 
     @Operation(summary = "Create new entity", description = "This API is used to create new entity")
     @ApiResponses(value = {@ApiResponse(responseCode = "201", description = "Created", useReturnTypeSchema = true),

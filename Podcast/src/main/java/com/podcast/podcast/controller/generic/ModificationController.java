@@ -18,7 +18,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 @SuppressWarnings({"unchecked", "rawtypes"})
 public interface ModificationController<D extends BaseDTO> {
 
-    ModificationService getService();
+    abstract ModificationService getService();
 
     @Operation(summary = "Update entity details", description = "This API is used to update existing entity")
     @ApiResponses(value = {@ApiResponse(responseCode = "200", description = "Updated", useReturnTypeSchema = true),

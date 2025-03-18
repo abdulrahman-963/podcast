@@ -13,5 +13,4 @@ public class FileDTO extends BaseDTO {
     private String format;
     private String path;
     private Integer durationInSeconds;
-    private Long episodeId; // Reference to the episode
 }

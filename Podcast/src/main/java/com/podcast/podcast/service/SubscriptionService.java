@@ -5,7 +5,8 @@ import com.podcast.podcast.model.entity.SubscriptionEntity;
 import com.podcast.podcast.model.search_criteria.SubscriptionSearchCriteria;
 import com.podcast.podcast.repository.BaseRepository;
 import com.podcast.podcast.repository.SubscriptionRepository;
-import com.podcast.podcast.service.generic.*;
+import com.podcast.podcast.service.generic.CrudService;
+import com.podcast.podcast.service.generic.DeletionBackupService;
 import com.podcast.podcast.service.mapper.GenericMapper;
 import com.podcast.podcast.service.mapper.SubscriptionMapper;
 import com.podcast.podcast.specification.DynamicSpecification;
@@ -20,10 +21,7 @@ import java.util.Objects;
 @Service
 @RequiredArgsConstructor
 @Slf4j
-public class SubscriptionService
-        implements CreattionService<SubscriptionEntity, SubscriptionDTO>,
-        ReadOnlyService<SubscriptionEntity, SubscriptionDTO, SubscriptionSearchCriteria>,
-        ModificationService<SubscriptionEntity, SubscriptionDTO>, DeletionService<SubscriptionEntity, SubscriptionDTO> {
+public class SubscriptionService implements CrudService<SubscriptionEntity, SubscriptionDTO, SubscriptionSearchCriteria> {
 
     private final SubscriptionRepository subscriptionRepository;
     private final SubscriptionMapper subscriptionMapper;

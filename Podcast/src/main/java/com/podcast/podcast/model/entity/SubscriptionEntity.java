@@ -33,8 +33,5 @@ public class SubscriptionEntity extends BaseEntity {
     @JoinColumn(name = "user_id", nullable = false)
     private UserEntity user;
 
-    @ManyToOne
-    @JoinColumn(name = "show_id", nullable = false)
-    private ShowEntity show;
 }
 
